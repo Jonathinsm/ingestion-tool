@@ -5,11 +5,11 @@ The tool will be able to extract data from different data sources that exist in 
 
 ## Application Architecture
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/jonathinsm/ingestion-tool/blob/master/img/ingestion-tool-App-Arch.png?raw=true)
 
 ## GCP Arcchitecture
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/jonathinsm/ingestion-tool/blob/master/img/ingestion-tool-Gcp-Arch.jpg?raw=true)
 
 ## Prerequisites:
 * Python 3.6 or higger
