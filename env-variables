@@ -1,0 +1,15 @@
+#Local Variables
+export  MONGO_INITDB_ROOT_USERNAME=root
+export  MONGO_INITDB_ROOT_PASSWORD=test
+export  DB_HOSTNAME=locahost
+export  DB_USERNAME=root
+export  DB_PASSWORD=test
+export  MSCONTROLLER_HOSTNAME=locahost
+export  MSMYSQL_HOSTNAME=locahost
+
+#Gcp Variables
+export PROJECT_ID=grupodot-estudio-certificacion
+export CLUSTER_NAME=ingestion-cluster-k8s
+export ZONE=us-east1-c
+export NETWORK=projects/grupodot-estudio-certificacion/global/networks/default
+export SUBNETWORK=projects/grupodot-estudio-certificacion/regions/us-east1/subnetworks/default

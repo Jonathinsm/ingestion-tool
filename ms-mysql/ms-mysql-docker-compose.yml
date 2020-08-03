@@ -1,0 +1,9 @@
+version: '2'
+services:
+  ms-mysql:
+    image: "ms-mysql:latest"
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - HTTP_PORT=5000

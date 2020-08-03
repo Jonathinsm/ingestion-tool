@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ms-db
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ms-db-app
+    spec:
+      containers:
+        # [Container info]
+        - name: ms-db-cont
+          image: gcr.io/grupodot-estudio-certificacion/mongo:4.2
+          volumeMounts:
+            - mountPath: /data/db
+              name: pdmongo
+          resources:
+            requests:
+                memory: 100Mi
+                cpu: 250m
+            limits:
+                memory: 512Mi
+                cpu: 500m
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 27017
+          env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: hostane-services
+                key: MONGO_INITDB_ROOT_USERNAME
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: hostane-services
+                key: MONGO_INITDB_ROOT_PASSWORD
+      volumes:
+      - name: pdmongo
+        persistentVolumeClaim:
+          claimName: pvc-mongo

@@ -1,0 +1,20 @@
+#SaKey
+ms-mysql/gcpkey.json
+#Python env
+ms-controller/venv
+ms-mysql/venv
+ms-ui/venv
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+ms-controller/services/__pycache__/
+ms-mysql/services/__pycache__/
+ms-ui/services/__pycache__/

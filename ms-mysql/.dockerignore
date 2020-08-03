@@ -1,0 +1,10 @@
+#git
+.git
+#python
+__pycache__
+env/
+venv/
+#Readme
+*.md
+#kubernetes
+k8s/

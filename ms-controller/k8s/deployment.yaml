@@ -1,0 +1,46 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ms-controller
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ms-controller-app
+    spec:
+      containers:
+        # [Container info]
+        - name: ms-controller-cont
+          image: gcr.io/grupodot-estudio-certificacion/ms-controller:latest
+          resources:
+            requests:
+                memory: 100Mi
+                cpu: 250m
+            limits:
+                memory: 512Mi
+                cpu: 500m
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB_HOSTNAME
+              valueFrom:
+                secretKeyRef:
+                  name: hostane-services
+                  key: DB_HOSTNAME
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: hostane-services
+                  key: DB_USERNAME
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: hostane-services
+                  key: DB_PASSWORD
+            - name: MSMYSQL_HOSTNAME
+              valueFrom:
+                secretKeyRef:
+                  name: hostane-services
+                  key: MSMYSQL_HOSTNAME

@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+  <br>
+  <a class="btn btn-primary" href="{{ url_for('newconnection') }}" role="button">Nueva Conexión</a>
+  <br>
+  <br>
+  <table class="table" id="myTable">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Proceso</th>
+        <th scope="col">Tipo de Proceso</th>
+        <th scope="col">Activo</th>
+        <th scope="col">Tipo de conexión</th>
+        <th scope="col">Base de datos</th>
+        <th scope="col">Sentencia SQL</th>
+        <th scope="col">Host</th>
+        <th scope="col">Puerto</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Contraseña</th>
+        <th scope="col">Destino GCS</th>
+        <th scope="col">Reemplazar archivo GCS</th>
+        <th scope="col">Destino BQ</th>
+        <th scope="col">Nombre Tabla BQ</th>
+        <th scope="col">Reemplazar tabla BQ</th>
+        <th scope="col">Eliminar Columnas</th>
+        <th scope="col">Anonimización</th>
+        <th scope="col">Algoritmo</th>
+        <th scope="col">Semilla</th>
+        <th scope="col">Columnas a Anonimizar</th>
+        <th scope="col">Columna Anonimizada</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+        <tr>
+          <th scope="row">1</th>
+          <th scope="row">{{item.processName}}</th>
+          <th scope="row">{{item.typeProcess}}</th>
+          <th scope="row">{{item.active}}</th>
+          <th scope="row">{{item.typeConnection}}</th>
+          <th scope="row">{{item.dataset}}</th>
+          <th scope="row">{{item.query}}</th>
+          <th scope="row">{{item.hostname}}</th>
+          <th scope="row">{{item.port}}</th>
+          <th scope="row">{{item.user}}</th>
+          <th scope="row">*****</th>
+          <th scope="row">{{item.destinationBucket}}</th>
+          <th scope="row">{{item.replaceFiles}}</th>
+          <th scope="row">{{item.destinationDataset}}</th>
+          <th scope="row">{{item.table}}</th>
+          <th scope="row">{{item.truncateTable}}</th>
+          <th scope="row">{{item.deleteColumns}}</th>
+          <th scope="row">{{item.anonymized}}</th>
+          <th scope="row">{{item.algorithm}}</th>
+          <th scope="row">{{item.seed}}</th>
+          <th scope="row">{{item.anonymizedColumns}}</th>
+          <th scope="row">{{item.nameColumnResult}}</th>
+          <td>
+            <a class="btn btn-info" href="{{ url_for('updateconnection') }}?id={{item.processName}}" role="button">Actualizar</a>
+            <a class="btn btn-danger" href="{{ url_for('deleteconection') }}?id={{item.processName}}" role="button">Eliminar</a>
+          </td>
+        </tr>
+      {% endfor %}      
+    </tbody>
+  </table>
+</div>
+
+{% endblock%}

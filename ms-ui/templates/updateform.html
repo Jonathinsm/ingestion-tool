@@ -1,0 +1,203 @@
+<form class="needs-validation" id="connform" action="{{ url_for('updateconn') }}" method="POST">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="firstName">Nombre de Proceso</label>
+        <input id="processName" type="text" class="form-control" name="processName" value="{{data.processName}}">
+        <div class="invalid-feedback">
+          Información nescesaria.
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="lastName">Activo</label>
+        <select id="active" class="custom-select d-block w-100" name="active">
+          <option value="{{data.active}}">{{data.active}}</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+        <div class="invalid-feedback">
+          Información nescesaria.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="username">Tipo de proceso</label>
+      <div class="input-group">
+          <select id="typeProcess" class="custom-select d-block w-100" name="typeProcess">
+              <option value="{{data.typeProcess}}">{{data.typeProcess}}</option>
+              <option value="sql-to-gcs">sql-to-gcs</option>
+              <option value="sql-to-bq">sql-to-bq</option>
+              <option value="sql-to-gcs-bq">sql-to-gcs-bq</option>
+              <option value="ftp-to-gcs">ftp-to-gcs</option>
+              <option value="ftp-to-bq">ftp-to-bq</option>
+              <option value="ftp-to-gcs-bq">ftp-to-gcs-bq</option>
+            </select>
+        <div class="invalid-feedback" style="width: 100%;">
+          Información nescesaria.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="username">Tipo de conexión</label>
+      <div class="input-group">
+          <select id="typeConnection" class="custom-select d-block w-100" name="typeConnection" >
+              <option value="{{data.typeConnection}}">{{data.typeConnection}}</option>
+              <option value="mysql">mysql</option>
+              <option value="oracle">oracle</option>
+              <option value="sqlserver">slqserver</option>
+            </select>
+        <div class="invalid-feedback" style="width: 100%;">
+          Información nescesaria.
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email">Nombre Base de datos</label>
+      <input id="dataset" type="text" class="form-control" name="dataset" value="{{data.dataset}}">
+      <div class="invalid-feedback">
+          Información nescesaria.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="address">Sentencia SQL</label>
+        <textarea id="query" class="form-control" aria-label="With textarea" name="query">{{data.query}}</textarea>
+      <div class="invalid-feedback">
+          Información nescesaria.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="address2">IP/Host </label>
+      <input id="hostname" type="text" class="form-control" placeholder="127.0.0.1 or hostname.co" name="hostname" value="{{data.hostname}}">
+      <div class="invalid-feedback" style="width: 100%;">
+          Información nescesaria.
+        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="address2">Puerto </label>
+      <input id="port" type="text" class="form-control" name="port" value="{{data.port}}">
+      <div class="invalid-feedback" style="width: 100%;">
+          Información nescesaria.
+        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="address2">Usurio </label>
+      <input id="user" type="text" class="form-control" name="user" value="{{data.user}}">
+      <div class="invalid-feedback" style="width: 100%;">
+          Información nescesaria.
+        </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="address2">Contraseña </label>
+      <input id="password" type="password" class="form-control" name="password" value="{{data.passwordplane}}">
+      <div class="invalid-feedback" style="width: 100%;">
+          Información nescesaria.
+        </div>
+    </div>
+
+    <h4 class="mb-3">Datos de Destino</h4>
+
+    <div class="mb-3">
+      <label for="email">Bucket GCS</label>
+      <input id="destinationBucket" type="text" class="form-control" placeholder="gs://my-bucket/ingestion" name="destinationBucket" value="{{data.destinationBucket}}">
+      <div class="invalid-feedback">
+          Información nescesaria.
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="lastName">Reemplazar Arachivo</label>
+      <select id="replaceFiles" class="custom-select d-block w-100" name="replaceFiles">
+        <option value="{{data.replaceFiles}}">{{data.replaceFiles}}</option>
+        <option value="true">True</option>
+        <option value="value">False</option>
+      </select>
+      <div class="invalid-feedback">
+          Información nescesaria.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email">Dataset de BQ</label>
+      <input id="destinationDataset" type="text" class="form-control" name="destinationDataset" value="{{data.destinationDataset}}">
+      <div class="invalid-feedback">
+          Información nescesaria.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email">Nombre Tabla de destino</label>
+      <input id="table" type="text" class="form-control" name="table" value="{{data.table}}">
+      <div class="invalid-feedback">
+          Información nescesaria.
+      </div>
+    </div>
+    
+    <div class="mb-3">
+      <label for="lastName">Reemplazar Tabla</label>
+      <select id="truncateTable" class="custom-select d-block w-100" name="truncateTable">
+        <option value="{{data.truncateTable}}">{{data.truncateTable}}</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+      <div class="invalid-feedback">
+          Información nescesaria.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="cc-expiration">Columnas a Eliminar <span class="text-muted">(Optional)</span></label>
+      <input id="deleteColumns" type="text" class="form-control" name="deleteColumns" value="{{data.deleteColumns}}">
+      <small class="text-muted">Indique los nombres separados por coma</small>
+    </div>
+
+    <h4 class="mb-3">Anonimización de Datos</h4>
+
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <label for="lastName">Anonimizar Datos</label>
+        <select id="anonymized" class="custom-select d-block w-100" name="anonymized">
+          <option value="{{data.anonymized}}">{{data.anonymized}}</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
+        <div class="invalid-feedback">
+            Información nescesaria.
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <label for="cc-name">Algoritmo</label>
+        <select id="algorithm" class="custom-select d-block w-100" name="algorithm">
+          <option value="{{data.algorithm}}">{{data.algorithm}}</option>
+          <option value="sha1">sha1</option>
+          <option value="aes256">aes256</option>
+        </select>
+      </div>
+      <div class="col-md-8 mb-3">
+        <label for="cc-cvv">Semilla</label>
+        <input id="seed" type="text" class="form-control" name="seed" value="{{data.seed}}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="cc-number">Columnas a Anonimizar</label>
+        <input id="anonymizedColumns" type="text" class="form-control" name="anonymizedColumns" value="{{data.anonymizedColumns}}">
+        <small class="text-muted">Indique los nombres separados por coma</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="cc-cvv">Columna Anonimizada</label>
+        <input id="nameColumnResult" type="text" class="form-control" name="nameColumnResult" value="{{data.nameColumnResult}}">
+        <small class="text-muted">Indique el nombre de la columna resultante de aminimización.</small>
+      </div>
+    </div>
+    <hr class="mb-4">
+    <button class="btn btn-primary btn-lg btn-block" type="submit">Actualizar</button>
+  </form>

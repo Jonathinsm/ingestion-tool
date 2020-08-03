@@ -1,0 +1,12 @@
+version: '2'
+services:
+  ms-ui:
+    image: "ms-ui:latest"
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    command: "python ./index.py"
+    environment:
+      - HTTP_PORT=5000
