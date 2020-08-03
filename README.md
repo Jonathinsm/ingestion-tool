@@ -9,7 +9,7 @@ The tool will be able to extract data from different data sources that exist in 
 
 ## GCP Arcchitecture
 
-![alt text](https://github.com/jonathinsm/ingestion-tool/blob/master/img/ingestion-tool-Gcp-Arch.jpg?raw=true)
+![alt text](https://github.com/jonathinsm/ingestion-tool/blob/master/img/ingestion-tool-Gcp-Arch.png?raw=true)
 
 ## Prerequisites:
 * Python 3.6 or higger
