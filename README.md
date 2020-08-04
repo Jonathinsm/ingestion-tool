@@ -16,12 +16,11 @@ The tool will be able to extract data from different data sources that exist in 
 * Docker
 * Google SDK
 
-## How to run local:
+## How to run locally:
 1. Set the environment variables refer to the env-variables file for guidance.
-2. Deploy each Microservice independly Read the README of each Microservice.
-3. Setup the database use the README file.
+2. Desploy ms-db to docker and setup the database use the README file in the ms-db.
+3. Deploy each python microservice independly Read the README of each microservice.
 
-Note: If you want to run all microservices in your computer dont forget to use different ports for each Microservice.
 
 ## How to run in GCP:
 1. Install the Google SDK in your computer or use the Cloud Shell.

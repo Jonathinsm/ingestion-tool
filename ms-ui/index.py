@@ -201,4 +201,4 @@ def deleteconection():
         return jsonify("Error %s" % ex)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=os.environ.get("HTTP_PORT", "5000"))
+    app.run(debug=True, host='0.0.0.0', port=os.environ.get("HTTP_PORT_MS_UI", "5000"))

@@ -9,4 +9,4 @@ services:
       - .:/app
     command: "python ./index.py"
     environment:
-      - HTTP_PORT=5000
+      - HTTP_PORT_MS_UI=5000

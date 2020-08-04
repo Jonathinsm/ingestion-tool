@@ -24,3 +24,9 @@ use db_pruebas
 ```
 db.connections.createIndex( { processName: 1 }, { unique: true } )
 ```
+
+## Deploy locally:
+```
+docker-compose ms-db-docker-compose.yml up -d
+```
+

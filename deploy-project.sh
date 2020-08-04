@@ -92,10 +92,6 @@ echo ------------Desplegando Endpoint
 echo --------------------------------
 cd config
 
-gcloud projects add-iam-policy-binding $PROJECT_ID \
---member "serviceAccount:"$SA_NAME \
---role roles/servicemanagement.serviceController
-
 gcloud compute addresses create ingestion-public-ip \
 --project=$PROJECT_ID \
 --global
@@ -115,6 +111,10 @@ echo --------------------------------
 echo ------------Desplegando Ingress
 echo --------------------------------
 kubectl apply -f resultingress.yaml -n ingestion-tool
+
+rm tempopenapi.yaml
+rm resultopenapi.yaml
+rm resultingress.yaml
 
 echo --------------------------------
 echo ------------Despliegue Terminado
